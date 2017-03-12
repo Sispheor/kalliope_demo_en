@@ -1,10 +1,4 @@
-# kalliope starter config en
+# kalliope demo English
 
-This is an out of the box working configuration for english kalliope user
- 
-How to use
- ```bash
-git clone https://github.com/kalliope-project/kalliope_starter_en.git
-cd kalliope_starter_en
-kalliope start
-```
+This is a little brain demo of Kalliope.
+You can see the result in [video here](https://www.youtube.com/watch?v=PcLzo4H18S4).
