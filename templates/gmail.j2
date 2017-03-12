@@ -1,0 +1,9 @@
+You have {{ unread }} email
+
+{% set count = 1 %}
+{% if unread > 0 %}
+    {% for subject in subjects %}
+     email number {{ count }}. {{ subject }}
+     {% set count = count + 1 %}
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,18 @@
+- name: "check-email"
+  neurons:
+    - gmail_checker:
+        username: "{{ gmail_username }}"
+        password: "{{ gmail_password }}"
+        file_template: "templates/gmail.j2"
+  signals:
+    - order: "what are my emails"
+
+- name: "check-number-email"
+  neurons:
+    - gmail_checker:
+        username: "{{ gmail_username }}"
+        password: "{{ gmail_password }}"
+        say_template:
+          - "You have {{ unread }} new email"
+  signals:
+    - order: "do I have emails"

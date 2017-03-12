@@ -1,0 +1,27 @@
+- name: "wake-up"
+  neurons:
+    - say:
+        message:
+          - "Hello sir"
+    - systemdate:
+        file_template: "templates/systemdate_template.j2"
+    - openweathermap:
+        api_key: "{{openweathermap_key}}"
+        lang: "fr"
+        temp_unit: "celsius"
+        location : "grenoble"
+        country: "FR"
+        say_template:
+          - "Today in {{ location }} the weather will be {{ weather_today }} with a temperature of {{ temp_today_temp|int }} degrees."
+    - neurotransmitter:
+          direct_link: "check-number-email"
+    - say:
+        message:
+          - "I wish you a good musical awakening"
+    - shell:
+        cmd: "mplayer http://192.99.17.12:6410/"
+        async: true
+  signals:
+    - event:
+        hour: "7"
+        minute: "30"
