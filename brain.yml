@@ -6,6 +6,24 @@
     signals:
       - order: "default"
 
+  - name: "on-triggered-synapse"
+    signals: []
+    neurons:
+      - say:
+          message:
+            - "yes madam?"
+            - "I'm listening"
+            - "I'm listening to you"
+            - "madam?"
+            - "what can i do for you?"
+            - "listening"
+            - "how can i help you?"
+
+  - name: "on-start-listening"
+    signals: []
+    neurons:
+      - shell:
+          cmd: "mplayer trigger/dong.wav"
 
   - includes:
       - brains/find_phone.yml

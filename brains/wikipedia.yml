@@ -3,8 +3,7 @@
     - wikipedia_searcher:
         language: "en"
         sentences: 1
-        args:
-          - query
+        query: {{query}}
         file_template: "templates/wikipedia_search.j2"
   signals:
     - order: "search on Wikipedia {{ query }}"
